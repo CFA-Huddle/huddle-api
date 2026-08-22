@@ -11,6 +11,10 @@ roles:
     - user:read:any
     - user:update:own
     - post:read
+    - training-module:create
+    - training-module:read
+    - training-module:delete
+    - training-module:update
   DIRECTOR:
     - user:read:any
     - user:create
@@ -20,6 +24,10 @@ roles:
     - post:create
     - post:update:own
     - post:delete:own
+    - training-module:create
+    - training-module:read
+    - training-module:delete
+    - training-module:update
   OPERATOR:
     - user:read:any
     - user:create
@@ -29,6 +37,10 @@ roles:
     - post:create
     - post:update:own
     - post:delete:any
+    - training-module:create
+    - training-module:read
+    - training-module:delete
+    - training-module:update
   ADMIN:
     - user:read:any
     - user:update:own
@@ -39,3 +51,7 @@ roles:
     - post:update:any
     - post:delete:own
     - post:delete:any
+    - training-module:create
+    - training-module:read
+    - training-module:delete
+    - training-module:update

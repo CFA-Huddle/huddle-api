@@ -10,11 +10,14 @@ class Config(BaseSettings):
     environment: str = os.getenv("ENVIRONMENT", "dev")
     aws_region: str = os.getenv("AWS_REGION", "us-east-2")
     cognito_user_pool_id: str = os.getenv("COGNITO_USER_POOL_ID")
-    profile_picture_bucket_name: str = os.getenv("PROFILE_PICTURE_BUCKET_NAME")
 
     @property
     def jwks_uri(self):
         return f"https://cognito-idp.{self.aws_region}.amazonaws.com/{self.cognito_user_pool_id}/.well-known/jwks.json"
+
+    @property
+    def profile_picture_bucket_name(self):
+        return f"{self.environment}-huddle-profile-pictures"
 
     # Database Configuration
     @property
@@ -24,6 +27,10 @@ class Config(BaseSettings):
     @property
     def memberships_table_name(self):
         return f"{self.environment}-huddle-memberships"
+
+    @property
+    def training_modules_table_name(self):
+        return f"{self.environment}-huddle-training-modules"
 
 
 config = Config()

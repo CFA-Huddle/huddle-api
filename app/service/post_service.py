@@ -86,7 +86,7 @@ class PostService:
 
     def get_posts_by_location_id(
         self, context: Context, location_id: str, include_deleted: bool = False
-    ) -> Post | None:
+    ) -> list[Post]:
         validate_permissions(context.user_id, location_id, "post:read")
 
         key_expression = Key("location_id").eq(location_id)
@@ -103,7 +103,7 @@ class PostService:
         item = self.db.get_item(key)
 
         # Verify item exists
-        if not item:
+        if not item or item.get("deleted_at"):
             raise NotFoundError("Post not found")
 
         is_owner = item.get("author_id") == context.user_id

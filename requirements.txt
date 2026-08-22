@@ -9,5 +9,6 @@ boto3
 botocore[crt]
 httpx
 pylint
+pylint-pydantic
 black
 exponent_server_sdk

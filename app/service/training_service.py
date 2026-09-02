@@ -43,7 +43,7 @@ class TrainingService:
         current_time = get_current_time()
         module_id = kwargs.get("id", generate_uuid())
         return {
-            "PK": f"LOCATION#{kwargs["location_id"]}",
+            "PK": f"LOCATION#{kwargs['location_id']}",
             "SK": f"MODULE#{module_id}",
             "id": module_id,
             "name": kwargs["name"],

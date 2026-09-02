@@ -17,6 +17,8 @@ Parameters:
     Type: String
   CognitoUserPoolID:
     Type: String
+  InviteMessageEmailTemplate:
+    Type: String
 
 Resources:
 
@@ -153,14 +155,8 @@ Resources:
       AdminCreateUserConfig:
         AllowAdminCreateUserOnly: true
         InviteMessageTemplate:
-          EmailSubject: "Welcome to Huddle"
-          EmailMessage: |
-            <html>
-              <body>
-                <p>Your username is {username}</p>
-                <p>Your temporary password is <b>{####}</b></p>
-              </body>
-            </html>
+          EmailSubject: "You've been invited to join a team on Huddle"
+          EmailMessage: !Ref InviteMessageEmailTemplate
       UsernameAttributes:
         - email
       AutoVerifiedAttributes:

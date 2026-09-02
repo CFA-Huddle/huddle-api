@@ -98,6 +98,7 @@ jobs:
               AWSRegion=${{ vars.AWS_REGION }} \
               CognitoUserPoolID=${{ vars.AWS_COGNITO_USER_POOL_ID }} \
               Environment="dev" \
+              InviteMessageEmailTemplate="$(cat email-templates/invite-message.html)" \
             --capabilities CAPABILITY_NAMED_IAM
 
       - name: Update Lambda Code

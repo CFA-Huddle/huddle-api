@@ -24,3 +24,7 @@ class PermissionDeniedError(Exception):
 
 class UserCreationError(Exception):
     """Raised when an error occurs when creating a user."""
+
+
+class InvalidListModificationError(Exception):
+    """Raised when a list is modified incorrectly. Used primarily for situations where reordering/editing items is allowed but adding/deleting items is not"""

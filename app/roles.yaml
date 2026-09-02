@@ -15,6 +15,9 @@ roles:
     - training-module:read
     - training-module:delete
     - training-module:update
+    - training-task:create
+    - training-task:update
+    - training-task:delete
   DIRECTOR:
     - user:read:any
     - user:create
@@ -28,6 +31,9 @@ roles:
     - training-module:read
     - training-module:delete
     - training-module:update
+    - training-task:create
+    - training-task:update
+    - training-task:delete
   OPERATOR:
     - user:read:any
     - user:create
@@ -41,6 +47,9 @@ roles:
     - training-module:read
     - training-module:delete
     - training-module:update
+    - training-task:create
+    - training-task:update
+    - training-task:delete
   ADMIN:
     - user:read:any
     - user:update:own
@@ -55,3 +64,6 @@ roles:
     - training-module:read
     - training-module:delete
     - training-module:update
+    - training-task:create
+    - training-task:update
+    - training-task:delete
